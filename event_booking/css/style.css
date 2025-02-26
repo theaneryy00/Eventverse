@@ -1,0 +1,474 @@
+/* Import Google Font */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); */
+
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('/event_booking/images/background-body.png') no-repeat center center fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container for Login & Signup */
+.container {
+    background: #ffffff;
+    padding: 40px;
+    width: 420px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Button Design */
+button, .btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: scale(1.05);
+}
+
+/* Links */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Body for Dashboard Layout */
+body.dashboard-layout {
+    display: flex;
+    background: #f8f9fa; /* Light background for readability */
+    color: #333; /* Darker text for better visibility */
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: whitesmoke;
+    color: #0268D9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #0268D9;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.logout-btn {
+    background: #0268D9;
+    color: whitesmoke;
+}
+
+/* Main Content (Pushed Right of Sidebar) */
+.main-content {
+    margin-left: 270px;
+    padding: 40px;
+    flex: 1;
+}
+
+/* Event Cards */
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.event-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Event Image */
+.event-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #0268D9;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: whitesmoke;
+    color: #0268D9;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        text-align: center;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .event-card {
+        width: 100%;
+    }
+}
+
+.sales-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.sales-table th, .sales-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.sales-table th {
+    background: #007bff;
+    color: white;
+}
+
+.sales-table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+.sales-table tr:hover {
+    background: #ddd;
+}
+
+/* Event Management Table Styling */
+.event-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Modern Events Table */
+.event-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-table th, .event-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.event-table th {
+    background: #007BFF;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.event-table td {
+    text-align: center;
+}
+
+/* Alternating Row Colors */
+.event-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Hover Effect */
+.event-table tr:hover {
+    background: #f1f1f1;
+}
+
+
+/* Buttons */
+td .edit-btn, td .delete-btn {
+    display: inline-block; /* Keep buttons side by side */
+    width: auto; /* Ensure both buttons are the same size */
+    padding: 8px 15px; /* Adjust padding for equal sizing */
+    font-size: 14px; /* Make text sizes uniform */
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 2px; /* Adds a small gap between them */
+}
+
+/* Edit button */
+.edit-btn {
+    background: #28a745; /* Green */
+    color: white;
+}
+
+/* Delete button */
+.delete-btn {
+    background: #dc3545; /* Red */
+    color: white;
+}
+
+/* Ensure they don’t stretch full width */
+td {
+    text-align: center;
+    white-space: nowrap; /* Prevents buttons from stacking */
+}
+
+
+/* Form Styling */
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.form-container table {
+    width: 100%;
+}
+
+.form-container input, .form-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    opacity: 0.8;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: 10% auto;
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto; /* Centers the logo horizontally */
+    width: 100px; /* Adjust size as needed */
+    height: auto; /* Maintains aspect ratio */
+    padding-bottom: 15px;
+}
+
+.event-logo {
+    display: block;
+    margin: 0 auto; /* Centers the logo horizontally */
+    width: 300px; /* Adjust size as needed */
+    height: auto; /* Maintains aspect ratio */
+    padding-bottom: 15px;
+}
+
+
+.admin-title {
+    color: #0268D9;
+}
+
+.dashboard-table-container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-table th, .dashboard-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.dashboard-table th {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.dashboard-table tr:last-child td {
+    border-bottom: none;
+}
+
+.dashboard-table td {
+    font-size: 16px;
+}
+
+.dashboard-table tr:hover {
+    background: #f1f1f1;
+    transition: 0.3s;
+}
+
+.success-message {
+    color: #007bff;
+}
+
+input:invalid {
+    border: 2px solid red;
+    background-color: #ffcccc;
+}
+
+input:valid {
+    border: 2px solid green;
+}
+
+input:focus:invalid {
+    outline: none;
+    box-shadow: 0 0 5px red;
+}
